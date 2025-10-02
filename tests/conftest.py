@@ -50,3 +50,11 @@ def category(first_product, second_product, third_product):
                     description="Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
                     products=[first_product, second_product, third_product]
                     )
+
+
+@pytest.fixture
+def category_tv(fourth_product):
+    return Category(name="Телевизоры",
+                    description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
+                    products=[fourth_product]
+                    )
