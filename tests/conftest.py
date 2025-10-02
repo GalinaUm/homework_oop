@@ -35,6 +35,16 @@ def third_product():
 
 
 @pytest.fixture
+def fourth_product():
+    return Product(
+        name="55\" QLED 4K",
+        description="Фоновая подсветка",
+        price=123000.0,
+        quantity=7
+    )
+
+
+@pytest.fixture
 def category(first_product, second_product, third_product):
     return Category(name="Смартфоны",
                     description="Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
