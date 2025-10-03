@@ -1,5 +1,4 @@
 from src.category import Category
-from tests.conftest import first_product, second_product, third_product
 
 
 def test_category_init(category, first_product, second_product, third_product):
