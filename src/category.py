@@ -14,14 +14,24 @@ class Category:
         self.description = description
         self.__products = products if products else []
         Category.category_count += 1
-        Category.product_count = len(products) if products else 0
+        Category.product_count += len(products) if products else 0
 
     def add_product(self, product):
         self.__products.append(product)
 
     @property
     def products(self):
-        return f'{Product.name}, {Product.price} руб. Остаток: {Product.quantity} шт.'
+        products_str = ''
+        for product in self.__products:
+            products_str = f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+        return products_str
+
+    @products.setter
+    def products(self, product: Product):
+        self.__products.append(product)
+        Category.product_count += 1
+
+
 
 
 
