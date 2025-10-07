@@ -52,5 +52,5 @@ def category_tv(fourth_product):
         description=(
             "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
         ),
-        products=[fourth_product]
+        products=[fourth_product],
     )

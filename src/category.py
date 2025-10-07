@@ -3,6 +3,7 @@ from src.product import Product
 
 class Category:
     """Класс, относящий продукт к определенной категории"""
+
     name: str
     description: str
     products: list
@@ -21,9 +22,9 @@ class Category:
 
     @property
     def products(self):
-        products_str = ''
+        products_str = ""
         for product in self.__products:
-            products_str = f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
+            products_str = f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return products_str
 
     @products.setter
@@ -31,7 +32,11 @@ class Category:
         self.__products.append(product)
         Category.product_count += 1
 
+    @property
+    def products_in_list(self):
+        return self.__products
 
-
-
-
+    @products_in_list.setter
+    def products_in_list(self, product: Product):
+        self.__products.append(product)
+        Category.product_count += 1

@@ -1,5 +1,6 @@
 class Product:
     """Класс, описывающий продукт"""
+
     name: str
     description: str
     price: float
@@ -22,18 +23,16 @@ class Product:
     @price.setter
     def price(self, new_price):
         if new_price <= 0:
-            print('Цена не должна быть нулевая или отрицательная')
+            print("Цена не должна быть нулевая или отрицательная")
         elif self.__price >= new_price:
             self.__price = new_price
         else:
-            access = (input("Подтвердите цену: y = да, n = нет: "))
+            access = input("Подтвердите цену: y = да, n = нет: ")
             print(access)
             if access == "y":
                 self.__price = new_price
             else:
-                print('Нет так нет')
+                print("Нет так нет")
 
 
-
-
-
+# pytest --cov --cov-report=html
