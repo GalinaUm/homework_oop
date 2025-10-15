@@ -32,6 +32,7 @@ def test_category_products_setter(category, first_product):
     category.products_in_list = first_product
     assert len(category.products_in_list) == 4
 
+
 def test_category_str(category, category_tv):
     assert str(category) == "Смартфоны, количество продуктов: 3 шт."
     assert str(category_tv) == "Телевизоры, количество продуктов: 1 шт."
