@@ -1,3 +1,6 @@
+from tests.conftest import third_product
+
+
 def test_product_init(first_product, second_product, third_product, fourth_product):
     assert first_product.name == "Samsung Galaxy S23 Ultra"
     assert first_product.description == "256GB, Серый цвет, 200MP камера"
@@ -18,3 +21,8 @@ def test_product_init(first_product, second_product, third_product, fourth_produ
     assert fourth_product.description == "Фоновая подсветка"
     assert fourth_product.price == 123000.0
     assert fourth_product.quantity == 7
+
+def test_product_add_price(first_product, second_product, third_product):
+    assert first_product + second_product == 2580000.0
+    assert first_product + third_product == 1334000.0
+    assert second_product + third_product == 2114000.0
