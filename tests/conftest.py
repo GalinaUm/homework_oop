@@ -58,5 +58,5 @@ def category_tv(fourth_product):
 
 
 @pytest.fixture
-def product_iterator(first_product):
-    return ProductIterator(first_product)
+def product_iterator(category):
+    return ProductIterator(category)
