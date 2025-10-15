@@ -1,8 +1,3 @@
-import pytest
-
-from tests.conftest import second_product
-
-
 def test_product_init(first_product, second_product, third_product, fourth_product):
     assert first_product.name == "Samsung Galaxy S23 Ultra"
     assert first_product.description == "256GB, Серый цвет, 200MP камера"
@@ -36,6 +31,7 @@ def test_product_str(first_product, second_product, third_product):
     assert str(second_product) == "Iphone 15, 210000.0 руб. Остаток: 8 шт."
     assert str(third_product) == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт."
 
+
 def test_price_setter_valid_lower_price(first_product, second_product):
     """
     Испытывает установку более низкой цены, которая должна быть принята.
@@ -46,6 +42,7 @@ def test_price_setter_valid_lower_price(first_product, second_product):
     second_product.price = new_price
     assert second_product.price == 170000.0
 
+
 def test_price_setter_valid_higher_price_with_confirmation(monkeypatch, first_product):
     """
     Испытывает установку более высокой цены с подтверждением 'y'.
@@ -55,6 +52,7 @@ def test_price_setter_valid_higher_price_with_confirmation(monkeypatch, first_pr
     monkeypatch.setattr("builtins.input", lambda _: "y")
     first_product.price = new_price
     assert first_product.price == new_price
+
 
 def test_price_setter_valid_higher_price_without_confirmation(monkeypatch, first_product):
     """
@@ -67,6 +65,7 @@ def test_price_setter_valid_higher_price_without_confirmation(monkeypatch, first
     first_product.price = new_price
     assert first_product.price == original_price  # Цена не должна измениться
 
+
 def test_price_setter_price_below_zero(first_product, second_product):
     """
     Испытывает установку более низкой цены, которая должна быть принята.
@@ -74,4 +73,3 @@ def test_price_setter_price_below_zero(first_product, second_product):
     new_price = 0.0
     first_product.price = new_price
     assert "Цена не должна быть нулевая или отрицательная"
-
