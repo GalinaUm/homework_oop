@@ -29,13 +29,11 @@ def test_smartphone(smartphone_one, smartphone_two, smartphone_three, lawngrass_
     assert smartphone_three.memory == 1024
     assert smartphone_three.color == "Синий"
 
+
 def test_smartphone_add(smartphone_one, smartphone_two):
     assert smartphone_one + smartphone_two == 2580000.0
+
 
 def test_smartphone_error(smartphone_one):
     with pytest.raises(TypeError):
         result = smartphone_one + 1
-
-
-
-

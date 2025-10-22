@@ -3,6 +3,7 @@ from src.product import Product
 
 class Smartphone(Product):
     """Класс, наследник класса Product, смартфоны"""
+
     def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
@@ -14,6 +15,3 @@ class Smartphone(Product):
         if type(other) is Smartphone:
             return self.price * self.quantity + other.price * other.quantity
         raise TypeError
-
-
-

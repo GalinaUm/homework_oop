@@ -66,8 +66,9 @@ def product_iterator(category):
 
 @pytest.fixture
 def smartphone_one():
-    return Smartphone("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5,
-                         "S23 Ultra", 256, "Серый")
+    return Smartphone(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5, 95.5, "S23 Ultra", 256, "Серый"
+    )
 
 
 @pytest.fixture
@@ -88,5 +89,3 @@ def lawngrass_one():
 @pytest.fixture
 def lawngrass_two():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
-
-

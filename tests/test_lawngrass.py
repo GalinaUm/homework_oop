@@ -18,12 +18,11 @@ def test_lawngrass(smartphone_one, smartphone_two, smartphone_three, lawngrass_o
     assert lawngrass_two.germination_period == "5 дней"
     assert lawngrass_two.color == "Темно-зеленый"
 
+
 def test_lawngrass_add(lawngrass_one, lawngrass_two):
     assert lawngrass_one + lawngrass_two == 16750.0
+
 
 def test_lawngrass_error(lawngrass_one):
     with pytest.raises(TypeError):
         result = lawngrass_one + 1
-
-
-

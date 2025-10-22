@@ -43,26 +43,4 @@ class Product:
                 print("Нет так нет")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # pytest --cov --cov-report=html

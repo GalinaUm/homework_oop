@@ -48,5 +48,6 @@ def test_category_products_setter_errors(category, first_product):
 def test_category_products_setter_smartphone(category, smartphone_one):
     category.products_in_list = smartphone_one
 
+
 def test_category_products_setter_lawngrass(category, lawngrass_one):
     category.products_in_list = lawngrass_one
