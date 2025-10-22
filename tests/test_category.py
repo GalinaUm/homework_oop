@@ -1,3 +1,5 @@
+import pytest
+
 from src.category import Category
 
 
@@ -36,3 +38,15 @@ def test_category_products_setter(category, first_product):
 def test_category_str(category, category_tv):
     assert str(category) == "Смартфоны, количество продуктов: 3 шт."
     assert str(category_tv) == "Телевизоры, количество продуктов: 1 шт."
+
+
+def test_category_products_setter_errors(category, first_product):
+    with pytest.raises(TypeError):
+        result = category.products_in_list + 1
+
+
+def test_category_products_setter_smartphone(category, smartphone_one):
+    category.products_in_list = smartphone_one
+
+def test_category_products_setter_lawngrass(category, lawngrass_one):
+    category.products_in_list = lawngrass_one
