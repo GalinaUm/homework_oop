@@ -1,6 +1,7 @@
 import pytest
 
 from src.category import Category
+from src.product import Product
 
 
 def test_category_init(category, first_product, second_product, third_product):
@@ -52,3 +53,13 @@ def test_category_products_setter_smartphone(category, smartphone_one):
 def test_category_products_setter_lawngrass(category, lawngrass_one):
     category.products_in_list = lawngrass_one
     assert str(category.products_in_list[-1]) == "Газонная трава, 500.0 руб. Остаток: 20 шт."
+
+
+def test_middle_price(category, category_without_products):
+    assert category.middle_price() == 140333.33333333334
+    assert category_without_products.middle_price() == 0
+
+
+def test_custom_exception(capsys, category):
+    assert len(category.products_in_list) == 3
+
