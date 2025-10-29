@@ -1,3 +1,5 @@
+from itertools import product
+
 from src.product import Product
 
 
@@ -26,6 +28,12 @@ class Category:
             Category.product_count += 1
         else:
             raise TypeError
+
+    def middle_price(self):
+        try:
+            return sum([product.price for product in self.products_in_list]) / len(self.products_in_list)
+        except ZeroDivisionError:
+            return 0
 
     @property
     def products(self):
