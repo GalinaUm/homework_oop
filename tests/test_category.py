@@ -1,7 +1,6 @@
 import pytest
 
 from src.category import Category
-from src.product import Product
 
 
 def test_category_init(category, first_product, second_product, third_product):
@@ -62,4 +61,3 @@ def test_middle_price(category, category_without_products):
 
 def test_custom_exception(capsys, category):
     assert len(category.products_in_list) == 3
-

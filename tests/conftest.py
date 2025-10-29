@@ -44,7 +44,7 @@ def category(first_product, second_product, third_product):
         description=(
             "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
         ),
-        products=[first_product, second_product, third_product]
+        products=[first_product, second_product, third_product],
     )
 
 
@@ -55,7 +55,7 @@ def category_tv(fourth_product):
         description=(
             "Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником"
         ),
-        products=[fourth_product]
+        products=[fourth_product],
     )
 
 
@@ -97,5 +97,5 @@ def category_without_products():
         name="Смартфоны",
         description=(
             "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни"
-        )
+        ),
     )
